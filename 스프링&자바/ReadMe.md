@@ -63,44 +63,48 @@ ex)<br>
 <br>
 ex)
 <h4>위배되는 코드</h4>
+<pre>
 class 동물
-  동물 타입
-  
-  생성자(타입)
-    동물 타입 = 타입
-
-  함수 말하기(동물)
-    if(동물 == 고양이)
-      print(야옹)    
-    else if(동물 == 강아지)
-      print(멍멍)   
-    else
-      에러 호출
-
+&nbsp; 동물 타입
+&nbsp; 
+&nbsp; 생성자(타입)
+&nbsp; &nbsp; 동물 타입 = 타입
+&nbsp; 
+&nbsp; 함수 말하기(동물)
+&nbsp; &nbsp; if(동물 == 고양이)
+&nbsp; &nbsp; &nbsp; print(야옹)    
+&nbsp; &nbsp; else if(동물 == 강아지)
+&nbsp; &nbsp; &nbsp; print(멍멍)   
+&nbsp; &nbsp; else
+&nbsp; &nbsp; &nbsp; 에러 호출
+&nbsp; 
 cat = 동물(고양이)
 dog = 동물(강아지)
-
+&nbsp; 
 cat.말하기
 dog.말하기
-
+</pre>
 만약 클라이언트가 소와 양을 추가해달라하면 동물에 대한 수정이 필요함 확장성은 닫혀있고 수정은 열려있는 원칙에 위배되는 상황
-
+<br>
 <h5>적절한 코드</h5>
+<pre>
 interface 동물
-  동물 타입
-  
-  추상 함수 말하기
-  
+&nbsp; 동물 타입
+&nbsp; 
+&nbsp; 추상 함수 말하기
+&nbsp; 
 class 고양이 : 동물
-  말하기
-    print(야옹)
+&nbsp; 말하기
+&nbsp; &nbsp; print(야옹)
+&nbsp; 
 class 강아지 : 동물
-  말하기
-    print(멍멍)
-
+&nbsp; 말하기
+&nbsp; &nbsp; print(멍멍)
+&nbsp; 
 cat.말하기
 dog.말하기
-
+</pre>
+<br>
 만약 클라이언트가 소와 양을 추가해달라하면 기존 코드는 건드릴 필요 없이 확장만 하면 사용 
 
 <h3>리스코프 치환 원칙</h3>
