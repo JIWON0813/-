@@ -121,7 +121,30 @@ dog.말하기
 </br>
 자바와 OS 사이의 중개자 역할<br>
 이전에 C로 개발을 했을 때 리눅스와 윈도우에 둘 다 실행이 되도록 조건에 따라 다른 코드를 짠 적이 있는데 자바는 JVM덕분에 그럴 필요가 없다<br>
+알아서 OS에 맞게 변환이 되기 때문에 따로 코딩할 필요X<br>
+<br>
+자바 프로그램 실행 과정<br>
+<br>
+JVM 메모리 할당 -> 메모리를 여러 영역으로 나눔(메모리 영역들 개념 중요) -> javac가 .java를 .class로 변환<br>
+-> Class Loader를 통해 class파일을 JVM으로 로딩 -> 로딩된 클래스 파일들은 Execution engine을 통해 해석 -> 해석된 바이트코드는 Runtime Data Areas에 배치되어 수행 이루어짐<br>
+<br>
+추후 설명(Execution engine, Class Loader, Runtime Data Area)
 
-자바 프로그램 실행 과정
+<br>
+<h1>Servlet, JSP</h1>
 
-고로 내가 직접 생성하는 것이 아닌 Spring에서 자바 객체를 얻어서 사용해야한다.<br>
+<h3>Servlet</h3>
+웹 요청에 대해 처리하는 자바 프로그램<br>
+Java코드 안에 HTML코드<br>
+DB통신, 비즈니스로직 호출, 데이터 작업 등에 유용<br>
+Servlet이 수정된 경우 재빌드하고 재배포 작업이 필요함<br>
+<h3>JSP</h3>
+Java언어를 기반으로 하는 Server Side스크립트 언어(서버 사이드 스크립트 - 서버쪽에서 행해지는 처리)<br>
+HTML코드 안에 Jave코드<br>
+요청 결과를 나타낼 때 유용<br>
+JSP가 수정된 경우 재배포할 필요 없이 WAS가 알아서 처리<br>
+<h3>동작과정</h3>
+JSP -> 내부적으로 WAS에서 Servlet파일로 변환 -> JSP 태그를 분해하고 추출하여 순수한 HTML웹 페이지로 변환 후 응답
+
+JSP, Servlet -> View부분은 HTML, JSP사용 -> Conrollder(Servlet의 매핑) -> 데이터 관련 작업(DB 접근 등등) *이것이 바로 MVC패턴
+
